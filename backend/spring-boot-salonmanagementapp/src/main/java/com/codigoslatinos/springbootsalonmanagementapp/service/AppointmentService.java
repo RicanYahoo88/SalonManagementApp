@@ -32,6 +32,6 @@ public class AppointmentService {
         return Optional.of(appointmentRepo.getReferenceById(appointmentID));
     }
     public void deleteAppointment(Long appointmentID) {
-        appointmentRepo.deleteAppointmentById(appointmentID);
+        appointmentRepo.deleteAppointmentByAppointmentID(appointmentID);
     }
 }

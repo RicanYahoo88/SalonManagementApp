@@ -11,6 +11,7 @@ import java.io.Serializable;
 @Table(name = "Customer")
 @Data
 public class Customer implements Serializable {
+
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "CustomerID")

@@ -30,11 +30,11 @@ public class ServicesRenderedService {
         return servicesRenderedRepo.save(serviceRendered);
     }
 
-    public Optional<ServicesRendered> findServiceRenderedById(Long appointmentID){
-        return Optional.of(servicesRenderedRepo.getReferenceById(appointmentID));
+    public Optional<ServicesRendered> findServiceRenderedByServiceID(Long serviceID){
+        return Optional.of(servicesRenderedRepo.getReferenceByServiceID(serviceID));
     }
 
-    public void deleteServiceRendered(Long appointmentID){
-        servicesRenderedRepo.deleteServiceRenderedById(appointmentID);
+    public void deleteServiceRendered(Long serviceID){
+        servicesRenderedRepo.deleteServiceRenderedByServiceID(serviceID);
     }
 }

@@ -32,6 +32,6 @@ public class ZipCodeService {
     }
 
     public void deleteZipCode(int zipcode){
-        zipCodeRepo.deleteById(zipcode);
+        zipCodeRepo.deleteByZipcode(zipcode);
     }
 }

@@ -16,7 +16,7 @@ public class SalonServicesService {
         this.salonServicesRepo = salonServicesRepo;
     }
     public SalonServices addSalonService(SalonServices salonService) {
-        salonService.setServiceID(Long.valueOf(UUID.randomUUID().toString()));
+        salonService.setAppointmentID(Long.valueOf(UUID.randomUUID().toString()));
         return salonServicesRepo.save(salonService);
 
     }
@@ -29,18 +29,12 @@ public class SalonServicesService {
         return salonServicesRepo.save(salonService);
     }
 
-    public Optional<SalonServices> findSalonServiceById(Long serviceID){
-        return Optional.of(salonServicesRepo.getReferenceById(serviceID));
+    public Optional<SalonServices> findSalonServiceByAppointmentID(Long appointmentID){
+        return Optional.of(salonServicesRepo.getReferenceByAppointmentID(appointmentID));
     }
 
-    public void deleteSalonService(Long serviceID){
-        salonServicesRepo.deleteSalonServiceById(serviceID);
+    public void deleteSalonServiceByAppointmentID(Long appointmentID){
+        salonServicesRepo.deleteSalonServiceByAppointmentID(appointmentID);
     }
 
-    /*
-    *
-    public void deleteEmployee(Long employeeID){
-        employeesRepo.deleteEmployeeById(employeeID);
-    }
-    * */
 }

@@ -35,6 +35,6 @@ public class CustomerService {
     }
 
     public void deleteCustomer(Long customerID) {
-        customerRepo.deleteCustomerById(customerID);
+        customerRepo.deleteCustomerByCustomerID(customerID);
     }
 }
