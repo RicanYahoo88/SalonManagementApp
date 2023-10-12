@@ -31,11 +31,13 @@ public class EmployeeService {
         return employeesRepo.save(employee);
     }
 
-    public Optional<Employees> findEmployeeByEmployeeID(Long employeeID){
-        return Optional.of(employeesRepo.getReferenceById(employeeID));
-    }
 
-    public void deleteEmployee(Long employeeID){
+    public void deleteEmployee(Long employeeID) {
         employeesRepo.deleteEmployeeByEmployeeID(employeeID);
     }
+
+    public Employees findByEmployeeID(Long employeeID) {
+        return employeesRepo.getReferenceById(employeeID);
+    }
 }
+
