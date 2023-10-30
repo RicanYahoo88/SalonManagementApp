@@ -2,11 +2,13 @@ package com.codigoslatinos.springbootsalonmanagementapp.service;
 
 import com.codigoslatinos.springbootsalonmanagementapp.dao.ZipCodeRepository;
 import com.codigoslatinos.springbootsalonmanagementapp.entity.ZipCode;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class ZipCodeService {
 
     private final ZipCodeRepository zipCodeRepo;
@@ -16,7 +18,7 @@ public class ZipCodeService {
     }
 
     public ZipCode addZipCode(ZipCode zipcode){
-        zipcode.setZipcode(Integer.parseInt(UUID.randomUUID().toString()));
+        zipcode.setZipcode(zipcode.getZipcode());
         return zipCodeRepo.save(zipcode);
     }
     public List<ZipCode> findAllZipCodes() {
@@ -27,11 +29,11 @@ public class ZipCodeService {
         return zipCodeRepo.save(zipcode);
     }
 
-    public Optional<ZipCode> findZipCode(int zipcode){
-        return Optional.of(zipCodeRepo.getReferenceById(zipcode));
+    public ZipCode findZipCode(Long zipcode){
+        return zipCodeRepo.getReferenceById(zipcode);
     }
 
-    public void deleteZipCode(int zipcode){
+    public void deleteZipCode(Long zipcode){
         zipCodeRepo.deleteByZipcode(zipcode);
     }
 }

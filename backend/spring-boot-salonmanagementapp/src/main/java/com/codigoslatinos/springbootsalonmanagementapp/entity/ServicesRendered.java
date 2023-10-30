@@ -5,37 +5,38 @@ import lombok.Data;
 import lombok.Getter;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Getter
 @Entity
-@Table(name = "ServicesRendered")
+@Table(name = "service_rendered")
 @Data
 public class ServicesRendered implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ServiceID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "service_ID")
     private Long serviceID;
 
-    @Column(name = "ServiceName")
+    @Column(name = "service_name")
     private String serviceName;
 
-    @Column(name = "ServiceDescription")
+    @Column(name = "service_description")
     private String serviceDescription;
 
-    @Column(name = "ServiceDuration")
-    private int serviceDuration;
+    @Column(name = "service_duration")
+    private LocalDateTime serviceDuration;
 
-    @Column(name = "ServicePrice")
+    @Column(name = "service_price")
     private double servicePrice;
 
-    @Column(name = "ServiceMaterials")
+    @Column(name = "service_materials")
     private String serviceMaterials;
 
     public ServicesRendered() {
     }
 
-    public ServicesRendered(Long serviceID, String serviceName, String serviceDescription, int serviceDuration, double servicePrice, String serviceMaterials) {
+    public ServicesRendered(Long serviceID, String serviceName, String serviceDescription, LocalDateTime serviceDuration, double servicePrice, String serviceMaterials) {
         this.serviceID = serviceID;
         this.serviceName = serviceName;
         this.serviceDescription = serviceDescription;
@@ -56,7 +57,7 @@ public class ServicesRendered implements Serializable {
         this.serviceDescription = serviceDescription;
     }
 
-    public void setServiceDuration(int serviceDuration) {
+    public void setServiceDuration(LocalDateTime serviceDuration) {
         this.serviceDuration = serviceDuration;
     }
 

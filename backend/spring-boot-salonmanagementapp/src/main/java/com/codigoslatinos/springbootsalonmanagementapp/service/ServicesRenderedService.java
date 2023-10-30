@@ -2,11 +2,13 @@ package com.codigoslatinos.springbootsalonmanagementapp.service;
 
 import com.codigoslatinos.springbootsalonmanagementapp.dao.ServicesRenderedRepository;
 import com.codigoslatinos.springbootsalonmanagementapp.entity.ServicesRendered;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class ServicesRenderedService {
 
     private final ServicesRenderedRepository servicesRenderedRepo;
@@ -30,8 +32,8 @@ public class ServicesRenderedService {
         return servicesRenderedRepo.save(serviceRendered);
     }
 
-    public Optional<ServicesRendered> findServiceRenderedByServiceID(Long serviceID){
-        return Optional.of(servicesRenderedRepo.getReferenceByServiceID(serviceID));
+    public ServicesRendered findServiceRenderedByServiceID(Long serviceID){
+        return servicesRenderedRepo.getReferenceByServiceID(serviceID);
     }
 
     public void deleteServiceRendered(Long serviceID){

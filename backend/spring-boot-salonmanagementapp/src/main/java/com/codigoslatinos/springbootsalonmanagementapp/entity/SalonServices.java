@@ -9,25 +9,26 @@ import java.io.Serializable;
 
     @Getter
     @Entity
-    @Table(name = "SalonServices")
+    @Table(name = "salon_services")
     @Data
     public class SalonServices implements Serializable {
 
-        @Id
-        @GeneratedValue(strategy=GenerationType.AUTO)
-        @Column(name = "AppointmentID")
+
+        @Column(name = "appointment_ID")
         private Long appointmentID;
 
-        @Column(name = "LineItemNumber")
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(name = "line_item_number")
         private int lineItemNumber;
 
-        @Column(name = "ServiceID")
+        @Column(name = "service_ID")
         private Long serviceID;
 
-        @Column(name = "ServicePrice")
+        @Column(name = "service_price")
         private double servicePrice;
 
-        @Column(name = "EmployeeID")
+        @Column(name = "employee_ID")
         private Long employeeID;
 
 

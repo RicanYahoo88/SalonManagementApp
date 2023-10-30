@@ -1,4 +1,4 @@
-INSERT INTO `yulanies_salon`.`Zipcodes` VALUES
+INSERT INTO `yulanies_salon`.`zipcodes` VALUES
 ('Conroyview', 'FL', '04493'),('Lake Jaynestad', 'AL', '05083'),('Lake Kenyatta', 'NE', '07543'),
 ('North Pierre', 'GA', '10247-0849'),('Mayertstad', 'WA', '12288'),('Cummingsport', 'NY', '13294'),
 ('Cassidymouth', 'MA', '15398-4080'),('Dawnchester', 'RI', '15839-9357'),('Port Felipa', 'IL', '17671-5777'),
@@ -14,14 +14,14 @@ INSERT INTO `yulanies_salon`.`Zipcodes` VALUES
 ('Tyriquebury', 'NJ', '87303-5999'),('Lake Joyton', 'AK', '87363'),('Port Isabella', 'LA', '88188'),('Dickinsonland', 'KS', '92278'),
 ('South Cliffordshire', 'NC', '93001-7134'),('Abdielfurt', 'ME', '95141-7736');
 
-INSERT INTO `yulanies_salon`.`Customer` VALUES 
+INSERT INTO `yulanies_salon`.`customer` VALUES 
 ('1', 'Forest', 'Schneider', '6849774952', '6753 Stephanie Lights Suite 341', 'Bruenmouth', 'DC', '10247-0849', 'M'),
 ('2', 'Susana', 'Feil', '3113400263', '304 Windler Shores', 'Jacobsborough', 'NM', '07543', 'F'),
 ('6', 'Beaulah', 'Stoltenberg', '177680-7725', '395 Nikolaus Lakes Suite 876', 'New Maeganmouth', 'MO', '12288', 'F'),
 ('8', 'Ed', 'Romaguera', '1735458940', '8173 Esperanza Flat', 'Lake Lindseyview', 'MD', '05083', 'M'),
 ('9', 'Kris', 'O\'Connell', '6669842886', '9310 Ethel Ville', 'Kuvalisshire', 'AR', '04493', 'F');
 
-INSERT INTO `yulanies_salon`.`Appointment` VALUES
+INSERT INTO `yulanies_salon`.`appointment` VALUES
 ('1042', '1996-03-15', '8'),('1052', '1988-09-04', '1'),('1091', '1985-07-20', '9'),
 ('1104', '1979-10-11', '8'),('1217', '2011-08-12', '6'),('1229', '2016-06-19', '2'),
 ('1237', '2012-02-23', '1'),('1255', '1981-04-20', '9'),('1274', '1994-07-28', '1'),
@@ -30,7 +30,7 @@ INSERT INTO `yulanies_salon`.`Appointment` VALUES
 ('1775', '2014-12-29', '8'),('1844', '1993-04-23', '1'),('1883', '1997-08-11', '2'),
 ('1886', '1978-03-01', '2'),('1937', '2006-09-08', '2');
 
-INSERT INTO `yulanies_salon`.`SalonServices` VALUES  
+INSERT INTO `yulanies_salon`.`salon_services` VALUES  
 ('100', 'Amet debitis adipisci occaecati.', 3, '5371', 'Alias et rerum et aut pariatur et fugiat exercitationem. Vero unde debitis reprehenderit qui minus. Suscipit quam fuga est repudiandae.')
 ,('101', 'Aut est accusantium voluptate volup', 23, '2', 'Ut illum tempora est blanditiis repellat modi. Perferendis vitae quas aut doloribus. Perspiciatis quis dolor voluptatum corporis modi dolore est.')
 ,('102', 'Voluptatem est praesentium voluptas', 22, '3', 'Ut voluptas dolores consequatur voluptas expedita. Aspernatur ullam non qui illo voluptatibus.')
@@ -133,14 +133,14 @@ INSERT INTO `yulanies_salon`.`SalonServices` VALUES
 ,('200', 'Quod quia qui tempore nobis ab nost', 22, '87', 'Provident qui qui vero quia hic sunt incidunt quia. Aut harum possimus quos tempora dolor. Illo voluptates voluptates sit ad veritatis quia fuga. Enim nam iste enim debitis aperiam quas non.');
 
 
-INSERT INTO `yulanies_salon`.`Employees` VALUES 
+INSERT INTO `yulanies_salon`.`employee` VALUES 
 ('1', 'Casandra', 'Lynch', '493 Schamberger Crossing Suite 706', '05083', 'West Ceciliastad', 'RhodeIsland', 11689),
 ('2', 'Olin', 'Rosenbaum', '373 Haley Lights Suite 526', '10247-0849', 'Hillsstad', 'Virginia', 60808255),
 ('3', 'Meta', 'Kutch', '1912 Willms Summit Apt. 003', '07543', 'Dickiburgh', 'Wyoming', 1509115),
 ('4', 'Isai', 'Kuvalis', '0863 Schultz Pike Apt. 467', '04493', 'Lake Harmonyborough', 'Ohio', 1),
 ('5', 'Trisha', 'Grady', '738 Rosemarie Prairie Apt. 740', '12288', 'Port Lewbury', 'District of Columbia', 43);
 
-INSERT INTO `yulanies_salon`.`ServiceRendered` VALUES 
+INSERT INTO `yulanies_salon`.`service_rendered` VALUES 
 ('1042', 0, '100', 3191, '1'),('1052', 577431071, '101', 205470540, '2'),('1091', 1614856, '102', 10506, '3'),
 ('1104', 4715810, '103', 1503778, '4'),('1217', 4308, '104', 8673, '5'),('1229', 91, '105', 0, '1'),
 ('1237', 9119070, '106', 36907742, '2'),('1255', 44295, '107', 36, '3'),('1274', 73568, '108', 333600, '4'),

@@ -5,43 +5,44 @@ import lombok.Data;
 import lombok.Getter;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 @Getter
 @Entity
-@Table(name = "Customer")
+@Table(name = "customer")
 @Data
 public class Customer implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "CustomerID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customer_ID")
     private Long customerID;
 
-    @Column(name = "FirstName")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "LastName")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "Street")
+    @Column(name = "street")
     private String street;
 
-    @Column(name = "City")
+    @Column(name = "city")
     private String city;
 
-    @Column(name = "State")
+    @Column(name = "state")
     private String state;
 
-    @Column(name = "ZipCode")
-    private String zipCode;
+    @Column(name = "zip_code")
+    private int zipCode;
 
-    @Column(name = "Gender")
+    @Column(name = "gender")
     private String gender;
 
     public Customer() {
     }
 
-    public Customer(Long customerID, String firstName, String lastName, String street, String city, String state, String zipCode, String gender) {
+    public Customer(Long customerID, String firstName, String lastName, String street, String city, String state, int zipCode, String gender) {
         this.customerID = customerID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -76,12 +77,25 @@ public class Customer implements Serializable {
         this.state = state;
     }
 
-    public void setZipCode(String zipCode) {
+    public void setZipCode(int zipCode) {
         this.zipCode = zipCode;
     }
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(getCustomerID(), customer.getCustomerID()) && Objects.equals(getFirstName(), customer.getFirstName()) && Objects.equals(getLastName(), customer.getLastName()) && Objects.equals(getStreet(), customer.getStreet()) && Objects.equals(getCity(), customer.getCity()) && Objects.equals(getState(), customer.getState()) && Objects.equals(getZipCode(), customer.getZipCode()) && Objects.equals(getGender(), customer.getGender());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCustomerID(), getFirstName(), getLastName(), getStreet(), getCity(), getState(), getZipCode(), getGender());
     }
 
     @Override

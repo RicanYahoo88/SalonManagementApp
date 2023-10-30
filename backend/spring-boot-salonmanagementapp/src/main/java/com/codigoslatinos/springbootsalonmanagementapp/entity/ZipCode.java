@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 @Getter
 @Entity
-@Table(name = "Zipcodes")
+@Table(name = "zipcode")
 @Data
 public class ZipCode implements Serializable {
 
@@ -20,14 +20,14 @@ public class ZipCode implements Serializable {
     private String state;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "zipcode")
-    private int zipcode;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "zip_code")
+    private Long zipcode;
 
     public ZipCode() {
     }
 
-    public ZipCode(String city, String state, int zipcode) {
+    public ZipCode(String city, String state, Long zipcode) {
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
@@ -41,7 +41,7 @@ public class ZipCode implements Serializable {
         this.state = state;
     }
 
-    public void setZipcode(int zipcode) {
+    public void setZipcode(Long zipcode) {
         this.zipcode = zipcode;
     }
 
