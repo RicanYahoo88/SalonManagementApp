@@ -3,10 +3,12 @@ package com.codigoslatinos.springbootsalonmanagementapp.service;
 import com.codigoslatinos.springbootsalonmanagementapp.dao.AppointmentRepository;
 import com.codigoslatinos.springbootsalonmanagementapp.entity.Appointment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class AppointmentService {
 
     private final AppointmentRepository appointmentRepo;
@@ -28,8 +30,8 @@ public class AppointmentService {
         return appointmentRepo.save(appointment);
     }
 
-    public Optional<Appointment> findAppointmentById(Long appointmentID){
-        return Optional.of(appointmentRepo.getReferenceById(appointmentID));
+    public Appointment findAppointmentByAppointmentId(Long appointmentID){
+        return appointmentRepo.getReferenceById(appointmentID);
     }
     public void deleteAppointment(Long appointmentID) {
         appointmentRepo.deleteAppointmentByAppointmentID(appointmentID);

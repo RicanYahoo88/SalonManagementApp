@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SalonServicesRepository extends JpaRepository<SalonServices, Long> {
 
-    void deleteSalonServiceByAppointmentID(Long appointmentID);
+    SalonServices getReferenceByLineItemNumber(int lineItemNumber);
 
-    SalonServices getReferenceByAppointmentID(Long appointmentID);
+    void deleteSalonServiceByLineItemNumber(int lineItemNumber);
 }

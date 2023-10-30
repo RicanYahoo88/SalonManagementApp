@@ -11,22 +11,24 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 
+
 @Getter
 @Entity
-@Table(name = "Appointment")
+@Table(name = "appointment")
 @Data
 public class Appointment implements Serializable {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "AppointmentID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "appointment_ID")
     private Long appointmentID;
 
-    @Column(name = "AppointmentDateTime")
+    @Column(name = "appointment_date_time")
     @CreationTimestamp
     private LocalDate appointmentDateTime;
 
-    @Column(name = "CustomerID")
+    @Column(name = "customer_ID")
     private Long customerID;
+
 
     public Appointment() {
     }
@@ -52,7 +54,8 @@ public class Appointment implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Appointment that)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+        Appointment that = (Appointment) o;
         return Objects.equals(getAppointmentID(), that.getAppointmentID()) && Objects.equals(getAppointmentDateTime(), that.getAppointmentDateTime()) && Objects.equals(getCustomerID(), that.getCustomerID());
     }
 
@@ -61,4 +64,12 @@ public class Appointment implements Serializable {
         return Objects.hash(getAppointmentID(), getAppointmentDateTime(), getCustomerID());
     }
 
+    @Override
+    public String toString() {
+        return "Appointment{" +
+                "appointmentID=" + appointmentID +
+                ", appointmentDateTime=" + appointmentDateTime +
+                ", customerID=" + customerID +
+                '}';
+    }
 }

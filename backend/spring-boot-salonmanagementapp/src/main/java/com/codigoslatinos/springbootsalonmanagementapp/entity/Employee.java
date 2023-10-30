@@ -9,37 +9,37 @@ import java.io.Serializable;
 
 @Getter
 @Entity
-@Table(name = "Employees")
+@Table(name = "employee")
 @Data
-public class Employees implements Serializable {
+public class Employee implements Serializable {
 
     @Id
-    @GeneratedValue
-    @Column(name = "EmployeeID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "employee_ID")
     private Long employeeID;
 
-    @Column(name = "FirstName")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "LastName")
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "Street")
+    @Column(name = "street")
     private String street;
 
-    @Column(name = "ZipCode")
+    @Column(name = "zip_code")
     private int zipCode;
 
-    @Column(name = "City")
+    @Column(name = "city")
     private String city;
 
-    @Column(name = "PayRate")
+    @Column(name = "pay_rate")
     private double payRate;
 
-    public Employees() {
+    public Employee() {
     }
 
-    public Employees(Long employeeID, String firstName, String lastName, String street, int zipCode, String city, double payRate) {
+    public Employee(Long employeeID, String firstName, String lastName, String street, int zipCode, String city, double payRate) {
         this.employeeID = employeeID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -79,7 +79,7 @@ public class Employees implements Serializable {
 
     @Override
     public String toString() {
-        return "Employees{" +
+        return "Employee{" +
                 "employeeID=" + employeeID +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +

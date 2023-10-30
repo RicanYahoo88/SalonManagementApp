@@ -30,11 +30,12 @@ public class CustomerService {
         return customerRepo.save(customer);
     }
 
-    public Optional<Customer> findCustomerById(Long customerID) {
-       return Optional.of(customerRepo.getReferenceById(customerID));
+    public Customer findCustomerByCustomerId(Long customerID) {
+       return customerRepo.getReferenceById(customerID);
     }
 
     public void deleteCustomer(Long customerID) {
         customerRepo.deleteCustomerByCustomerID(customerID);
     }
+
 }

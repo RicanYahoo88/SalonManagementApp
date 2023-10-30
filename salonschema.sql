@@ -15,135 +15,120 @@ USE `yulanies_salon`;
 -- Table `yulanies_salon`.`zipcodes`
 -- -----------------------------------------------------
           
-DROP TABLE IF EXISTS `yulanies_salon`.`Zipcodes`;
+DROP TABLE IF EXISTS `yulanies_salon`.`zipcode`;
 
-CREATE TABLE `yulanies_salon`.`Zipcodes` (
+CREATE TABLE `yulanies_salon`.`zipcode` (
   `city` varchar(36) DEFAULT NULL,
   `state` varchar(4) DEFAULT NULL,
-  `zipcode` varchar(12) NOT NULL,
-  PRIMARY KEY (`zipcode`)
+  `zip_code` integer(12) NOT NULL,
+  PRIMARY KEY (`zip_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
           
 -- -----------------------------------------------------
 -- Table `yulanies_salon`.`customer`
 -- -----------------------------------------------------
           
-DROP TABLE IF EXISTS `yulanies_salon`.`Customer`;
+DROP TABLE IF EXISTS `yulanies_salon`.`customer`;
 
-CREATE TABLE `yulanies_salon`.`Customer` (
-  `CustomerID` varchar(10) NOT NULL,
-  `FirstName` varchar(35) DEFAULT NULL,
-  `LastName` varchar(35) DEFAULT NULL,
-  `PhoneNumber` varchar(15) DEFAULT NULL,
-  `Street` varchar(35) DEFAULT NULL,
-  `City` varchar(36) DEFAULT NULL,
-  `State` varchar(4) DEFAULT NULL,
-  `ZipCode` varchar(12) DEFAULT NULL,
-  `Gender` varchar(2) DEFAULT NULL,
-  PRIMARY KEY (`CustomerID`)
+CREATE TABLE `yulanies_salon`.`customer` (
+  `customer_ID` integer(10) NOT NULL,
+  `first_name` varchar(35) DEFAULT NULL,
+  `last_name` varchar(35) DEFAULT NULL,
+  `phone_number` varchar(15) DEFAULT NULL,
+  `street` varchar(35) DEFAULT NULL,
+  `city` varchar(36) DEFAULT NULL,
+  `state` varchar(4) DEFAULT NULL,
+  `zip_code` integer(12) DEFAULT NULL,
+  `gender` varchar(2) DEFAULT NULL,
+  PRIMARY KEY (`customer_ID`),
+  FOREIGN KEY (`zip_code`) REFERENCES zipcode(`zip_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- -----------------------------------------------------
 -- Table `yulanies_salon`.`Appointment`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `yulanies_salon`.`Appointment`;
+DROP TABLE IF EXISTS `yulanies_salon`.`appointment`;
 
-CREATE TABLE `yulanies_salon`.`Appointment` (
-  `AppointmentID` varchar(10) NOT NULL,
-  `AppointmentDateTime` date DEFAULT NULL,
-  `CustomerID` varchar(10) NOT NULL,
-  PRIMARY KEY (`AppointmentID`)
-) 
-ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `yulanies_salon`.`appointment` (
+  `appointment_ID` int(10) NOT NULL,
+  `appointment_date_time` date DEFAULT NULL,
+  `customer_ID` int(10) NOT NULL,
+  PRIMARY KEY (`appointment_ID`),
+  FOREIGN KEY (`customer_ID`) REFERENCES customer(`customer_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- -----------------------------------------------------
--- Table `yulanies_salon`.`SalonServices`
+-- Table `yulanies_salon`.`salon_services`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `SalonServices`;
+DROP TABLE IF EXISTS `salon_services`;
 
-CREATE TABLE `yulanies_salon`.`SalonServices` (
-  `ServiceID` varchar(10) NOT NULL,
-  `ServiceName` varchar(35) DEFAULT NULL,
-  `ServiceDuration` int(11) DEFAULT NULL,
-  `ServicePrice` decimal(10,0) DEFAULT NULL,
-  `ServiceMaterials` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ServiceID`)
+CREATE TABLE `yulanies_salon`.`salon_services` (
+  `service_ID` int(10) NOT NULL,
+  `service_name` varchar(35) DEFAULT NULL,
+  `service_duration` int(11) DEFAULT NULL,
+  `service_price` decimal(10,0) DEFAULT NULL,
+  `service_materials` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`service_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- -----------------------------------------------------
 -- Table `yulanies_salon`.`Employees`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `Employees`;
+DROP TABLE IF EXISTS `employee`;
 
-CREATE TABLE `yulanies_salon`.`Employees` (
-  `EmployeeID` varchar(10) NOT NULL,
-  `FirstName` varchar(35) DEFAULT NULL,
-  `LastName` varchar(25) DEFAULT NULL,
-  `Street` varchar(45) DEFAULT NULL,
-  `ZipCode` varchar(15) DEFAULT NULL,
-  `City` varchar(25) DEFAULT NULL,
-  `State` varchar(45) DEFAULT NULL,
-  `PayRate` int(11) DEFAULT NULL,
-  PRIMARY KEY (`EmployeeID`)
+CREATE TABLE `yulanies_salon`.`employee` (
+  `employee_ID` int(10) NOT NULL,
+  `first_name` varchar(35) DEFAULT NULL,
+  `last_name` varchar(25) DEFAULT NULL,
+  `street` varchar(45) DEFAULT NULL,
+  `zip_code` varchar(15) DEFAULT NULL,
+  `city` varchar(25) DEFAULT NULL,
+  `state` varchar(45) DEFAULT NULL,
+  `pay_rate` int(11) DEFAULT NULL,
+  PRIMARY KEY (`employee_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- -----------------------------------------------------
 -- Table `yulanies_salon`.`ServicesRendered`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `ServiceRendered`;
+DROP TABLE IF EXISTS `service_rendered`;
 
-CREATE TABLE `yulanies_salon`.`ServiceRendered` (
-  `AppointmentID` varchar(10) NOT NULL,
-  `LineItemNumber` int(2) NOT NULL,
-  `ServiceID` varchar(10) NOT NULL,
-  `ServicePrice` int(4) NOT NULL,
-  `EmployeeID` varchar(10) NOT NULL,
-  PRIMARY KEY (`AppointmentID`,`LineItemNumber`)
+CREATE TABLE `yulanies_salon`.`service_rendered` (
+  `appointment_ID` int(10) NOT NULL,
+  `line_item_number` int(2) NOT NULL,
+  `service_ID` varchar(10) NOT NULL,
+  `service_price` int(4) NOT NULL,
+  `employee_ID` int(10) NOT NULL,
+  PRIMARY KEY (`appointment_ID`,`line_item_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-DROP TABLE IF EXISTS `SalonServices`;
-
--- -----------------------------------------------------
--- Table `yulanies_salon`.`ServicesRendered`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `SalonServices`;
-
-CREATE TABLE `SalonServices` (
-  `ServiceID` varchar(10) NOT NULL,
-  `ServiceName` varchar(35) DEFAULT NULL,
-  `ServiceDuration` int(11) DEFAULT NULL,
-  `ServicePrice` decimal(10,0) DEFAULT NULL,
-  `ServiceMaterials` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ServiceID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-ALTER TABLE `yulanies_salon`.`Customer`
-   ADD CONSTRAINT fk_customer_zipcodes
-     FOREIGN KEY (ZipCode) 
-        REFERENCES Zipcodes (zipcode);
+ALTER TABLE `yulanies_salon`.`customer`
+   ADD CONSTRAINT fk_customer_zipcode
+     FOREIGN KEY (zip_code) 
+        REFERENCES zipcode (zip_code);
         
-ALTER TABLE `yulanies_salon`.`Employees`
-   ADD CONSTRAINT fk_employees_zipcodes
-     FOREIGN KEY (ZipCode) 
-        REFERENCES Zipcodes (zipcode);
+ALTER TABLE `yulanies_salon`.`employee`
+   ADD CONSTRAINT fk_employee_zipcode
+     FOREIGN KEY (zip_code) 
+        REFERENCES zipcode (zip_code);
 
-ALTER TABLE `yulanies_salon`.`Appointment`
+ALTER TABLE `yulanies_salon`.`appointment`
    ADD CONSTRAINT fk_customer_appointment
-     FOREIGN KEY (CustomerID) 
-        REFERENCES Customer (CustomerID);
+     FOREIGN KEY (customer_ID) 
+        REFERENCES customer(customer_ID);
 
-ALTER TABLE `yulanies_salon`.`ServiceRendered`
-   ADD CONSTRAINT fk_ServiceRendered_Service
-     FOREIGN KEY (ServiceID) 
-        REFERENCES SalonServices (ServiceID);
+ALTER TABLE `yulanies_salon`.`service_rendered`
+   ADD CONSTRAINT fk_service_rendered_service
+     FOREIGN KEY (service_ID) 
+        REFERENCES salon_services (service_ID);
 
-ALTER TABLE `yulanies_salon`.`ServiceRendered`
-   ADD CONSTRAINT fk_ServiceRendered_Employee
-     FOREIGN KEY (EmployeeID) 
-        REFERENCES Employees (EmployeeID);
+ALTER TABLE `yulanies_salon`.`service_rendered`
+   ADD CONSTRAINT fk_service_rendered_employee
+     FOREIGN KEY (employee_ID) 
+        REFERENCES employee (employee_ID);
 
-ALTER TABLE `yulanies_salon`.`ServiceRendered`
-   ADD CONSTRAINT fk_ServiceRendered_Appointmentcity
-     FOREIGN KEY (AppointmentID) 
-        REFERENCES Appointment (AppointmentID);
+ALTER TABLE `yulanies_salon`.`service_rendered`
+   ADD CONSTRAINT fk_service_rendered_appointment
+     FOREIGN KEY (appointment_ID) 
+        REFERENCES appointment (appointment_ID);
         

@@ -1,43 +1,42 @@
 package com.codigoslatinos.springbootsalonmanagementapp.service;
 
-import com.codigoslatinos.springbootsalonmanagementapp.dao.EmployeesRepository;
-import com.codigoslatinos.springbootsalonmanagementapp.entity.Employees;
+import com.codigoslatinos.springbootsalonmanagementapp.dao.EmployeeRepository;
+import com.codigoslatinos.springbootsalonmanagementapp.entity.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
 public class EmployeeService {
 
-    private final EmployeesRepository employeesRepo;
+    private final EmployeeRepository employeeRepo;
 
 
-    public EmployeeService(EmployeesRepository employeesRepo) {
-        this.employeesRepo = employeesRepo;
+    public EmployeeService(EmployeeRepository employeeRepo) {
+        this.employeeRepo = employeeRepo;
     }
 
-    public Employees addEmployee(Employees employee) {
+    public Employee addEmployee(Employee employee) {
         employee.setEmployeeID(Long.valueOf(UUID.randomUUID().toString()));
-        return employeesRepo.save(employee);
+        return employeeRepo.save(employee);
     }
 
-    public List<Employees> findAllEmployees() {
-        return employeesRepo.findAll();
+    public List<Employee> findAllEmployees() {
+        return employeeRepo.findAll();
     }
 
-    public Employees updateEmployee(Employees employee) {
-        return employeesRepo.save(employee);
+    public Employee updateEmployee(Employee employee) {
+        return employeeRepo.save(employee);
     }
 
 
     public void deleteEmployee(Long employeeID) {
-        employeesRepo.deleteEmployeeByEmployeeID(employeeID);
+        employeeRepo.deleteEmployeeByEmployeeID(employeeID);
     }
 
-    public Employees findByEmployeeID(Long employeeID) {
-        return employeesRepo.getReferenceById(employeeID);
+    public Employee findByEmployeeID(Long employeeID) {
+        return employeeRepo.getReferenceById(employeeID);
     }
 }
 
