@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.CreatedDate;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -20,26 +19,26 @@ public class Appointment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "appointment_ID")
-    private Long appointmentID;
+    private String appointmentID;
 
     @Column(name = "appointment_date_time")
     @CreationTimestamp
     private LocalDate appointmentDateTime;
 
     @Column(name = "customer_ID")
-    private Long customerID;
+    private String customerID;
 
 
     public Appointment() {
     }
 
-    public Appointment(Long appointmentID, LocalDate appointmentDateTime, Long customerID) {
+    public Appointment(String appointmentID, LocalDate appointmentDateTime, String customerID) {
         this.appointmentID = appointmentID;
         this.appointmentDateTime = appointmentDateTime;
         this.customerID = customerID;
     }
 
-    public void setAppointmentID(Long appointmentID) {
+    public void setAppointmentID(String appointmentID) {
         this.appointmentID = appointmentID;
     }
 
@@ -47,7 +46,7 @@ public class Appointment implements Serializable {
         this.appointmentDateTime = appointmentDateTime;
     }
 
-    public void setCustomerID(Long customerID) {
+    public void setCustomerID(String customerID) {
         this.customerID = customerID;
     }
 

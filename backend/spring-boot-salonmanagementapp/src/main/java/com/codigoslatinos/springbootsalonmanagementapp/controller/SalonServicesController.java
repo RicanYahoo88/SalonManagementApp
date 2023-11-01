@@ -23,9 +23,9 @@ public class SalonServicesController {
         List<SalonServices> salonServices = salonServicesService.findAllSalonServices();
         return new ResponseEntity<>(salonServices, HttpStatus.OK);
     }
-    @GetMapping("/find/{lineitemnumber}")
-    public ResponseEntity<SalonServices> getSalonServiceByLineItemNumber(@PathVariable("lineitemnumber") int lineItemNumber) {
-        SalonServices salonService = salonServicesService.findSalonServiceByLineItemNumber(lineItemNumber);
+    @GetMapping("/find/{serviceID}")
+    public ResponseEntity<SalonServices> getSalonServiceByServiceID(@PathVariable("serviceID") String serviceID) {
+        SalonServices salonService = salonServicesService.findSalonServiceByServiceID(serviceID);
         return new ResponseEntity<>(salonService, HttpStatus.OK);
     }
     @PostMapping("/add")
@@ -39,9 +39,9 @@ public class SalonServicesController {
         SalonServices newSalonService = salonServicesService.updateSalonService(salonService);
         return new ResponseEntity<>(newSalonService, HttpStatus.OK);
     }
-    @DeleteMapping("/delete/{lineitemnumber}")
-    public ResponseEntity<?> deleteSalonService(@PathVariable("lineitemnumber") int lineItemNumber) {
-        salonServicesService.deleteSalonServiceByLineItemNumber(lineItemNumber);
+    @DeleteMapping("/delete/{serviceID}")
+    public ResponseEntity<?> deleteSalonService(@PathVariable("serviceID") String serviceID) {
+        salonServicesService.deleteSalonServiceByServiceID(serviceID);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

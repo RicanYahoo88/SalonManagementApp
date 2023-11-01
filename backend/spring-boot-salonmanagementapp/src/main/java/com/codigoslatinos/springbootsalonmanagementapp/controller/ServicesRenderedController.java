@@ -1,6 +1,6 @@
 package com.codigoslatinos.springbootsalonmanagementapp.controller;
 
-import com.codigoslatinos.springbootsalonmanagementapp.entity.ServicesRendered;
+import com.codigoslatinos.springbootsalonmanagementapp.entity.ServiceRendered;
 import com.codigoslatinos.springbootsalonmanagementapp.service.ServicesRenderedService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/servicesrendered")
+@RequestMapping("/servicerendered")
 public class ServicesRenderedController {
 
     private final ServicesRenderedService servicesRenderedService;
@@ -20,31 +20,31 @@ public class ServicesRenderedController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<ServicesRendered>> getAllServicesRendered() {
-        List<ServicesRendered> servicesRendered = servicesRenderedService.findAllServicesRendered();
-        return new ResponseEntity<>(servicesRendered, HttpStatus.OK);
+    public ResponseEntity<List<ServiceRendered>> getAllServicesRendered() {
+        List<ServiceRendered> serviceRendered = servicesRenderedService.findAllServicesRendered();
+        return new ResponseEntity<>(serviceRendered, HttpStatus.OK);
     }
 
     @GetMapping("/find/{serviceID}")
-    public ResponseEntity<ServicesRendered> getServicesRenderedByServiceID(@PathVariable("serviceID") Long serviceID) {
-        ServicesRendered serviceRendered =  servicesRenderedService.findServiceRenderedByServiceID(serviceID);
+    public ResponseEntity<ServiceRendered> getServicesRenderedByServiceID(@PathVariable("serviceID") String serviceID) {
+        ServiceRendered serviceRendered =  servicesRenderedService.findServiceRenderedByServiceID(serviceID);
         return new ResponseEntity<>(serviceRendered, HttpStatus.OK);
 
     }
 
     @PostMapping("/add")
-    public ResponseEntity<ServicesRendered> addServicesRendered(@RequestBody ServicesRendered serviceRendered) {
-        ServicesRendered newServiceRendered = servicesRenderedService.addServiceRendered(serviceRendered);
+    public ResponseEntity<ServiceRendered> addServicesRendered(@RequestBody ServiceRendered serviceRendered) {
+        ServiceRendered newServiceRendered = servicesRenderedService.addServiceRendered(serviceRendered);
         return new ResponseEntity<>(newServiceRendered, HttpStatus.OK);
     }
     @PutMapping("/update")
-    public ResponseEntity<ServicesRendered> updateServicesRendered(@RequestBody ServicesRendered servicesRendered) {
-        ServicesRendered updatedServicesRendered = servicesRenderedService.updateServiceRendered(servicesRendered);
-        return new ResponseEntity<>(updatedServicesRendered, HttpStatus.OK);
+    public ResponseEntity<ServiceRendered> updateServicesRendered(@RequestBody ServiceRendered serviceRendered) {
+        ServiceRendered updatedServiceRendered = servicesRenderedService.updateServiceRendered(serviceRendered);
+        return new ResponseEntity<>(updatedServiceRendered, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{serviceID}")
-    public ResponseEntity<?> deleteServiceRendered(@PathVariable("serviceID") Long serviceID) {
+    public ResponseEntity<?> deleteServiceRendered(@PathVariable("serviceID") String serviceID) {
         servicesRenderedService.deleteServiceRendered(serviceID);
         return new ResponseEntity<>(HttpStatus.OK);
     }

@@ -22,12 +22,12 @@ public class ZipCode implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "zip_code")
-    private Long zipcode;
+    private String zipcode;
 
     public ZipCode() {
     }
 
-    public ZipCode(String city, String state, Long zipcode) {
+    public ZipCode(String city, String state, String zipcode) {
         this.city = city;
         this.state = state;
         this.zipcode = zipcode;
@@ -41,7 +41,7 @@ public class ZipCode implements Serializable {
         this.state = state;
     }
 
-    public void setZipcode(Long zipcode) {
+    public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
 

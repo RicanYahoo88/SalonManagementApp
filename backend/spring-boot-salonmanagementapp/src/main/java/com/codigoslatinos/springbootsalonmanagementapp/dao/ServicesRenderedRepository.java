@@ -1,10 +1,12 @@
 package com.codigoslatinos.springbootsalonmanagementapp.dao;
 
-import com.codigoslatinos.springbootsalonmanagementapp.entity.ServicesRendered;
+import com.codigoslatinos.springbootsalonmanagementapp.entity.ServiceRendered;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-public interface ServicesRenderedRepository extends JpaRepository<ServicesRendered, Long> {
-    void deleteServiceRenderedByServiceID(Long serviceID);
+@RepositoryRestResource(collectionResourceRel = "servicesRendered", path = "services-rendered")
+public interface ServicesRenderedRepository extends JpaRepository<ServiceRendered, String> {
+    void deleteServiceRenderedByServiceID(String serviceID);
 
-    ServicesRendered getReferenceByServiceID(Long serviceID);
+    ServiceRendered getReferenceByServiceID(String serviceID);
 }

@@ -1,18 +1,22 @@
-INSERT INTO `yulanies_salon`.`zipcodes` VALUES
+INSERT INTO `yulanies_salon`. `zipcode` VALUES
 ('Conroyview', 'FL', '04493'),('Lake Jaynestad', 'AL', '05083'),('Lake Kenyatta', 'NE', '07543'),
 ('North Pierre', 'GA', '10247-0849'),('Mayertstad', 'WA', '12288'),('Cummingsport', 'NY', '13294'),
 ('Cassidymouth', 'MA', '15398-4080'),('Dawnchester', 'RI', '15839-9357'),('Port Felipa', 'IL', '17671-5777'),
 ('Port Rosalee', 'MD', '17873-2266'),('South Marina', 'IA', '18741-4383'),('Mohammadmouth', 'CA', '19674-5032'),
-('South Bethelland', 'TX', '21207-3035'),('Lake Mohammad', 'UT', '24063'),('Port Zenaland', 'NY', '31072'),('East Isomville', 'MA', '35169-2176'),
-('Lindgrenburgh', 'NM', '35603-3646'),('North Elyse', 'MO', '35652'),('Goodwinview', 'AK', '36001-2043'),('Gleasonborough', 'NJ', '36383'),
-('Shanahanland', 'LA', '36446'),('Port Bert', 'OK', '38807-7914'),('East Arnoldstad', 'WA', '39333'),('North Orville', 'CO', '39893'),
-('Nashberg', 'OH', '41155'),('New Roslyn', 'CO', '42081-1347'),('Stammside', 'AZ', '45736-8738'),('Loweborough', 'WA', '47838-0665'),
-('Klockobury', 'MA', '48118-2671'),('Litzyberg', 'AK', '49281'),('East Felicia', 'MN', '50016-5147'),('New Green', 'MI', '50197-5647'),
-('Port Isobel', 'OK', '55143'),('Ritchieport', 'DE', '58987'),('Hallieside', 'MT', '60793-3280'),('South Tremaineport', 'VA', '62432-4663'),
-('Port Sunny', 'DC', '63389'),('Jerdefurt', 'SD', '73411-9404'),('Presleytown', 'ID', '76991-9195'),('North Kylee', 'ME', '77447-6336'),
-('South Tito', 'IL', '81064-1868'),('North Emmanuellefurt', 'NE', '83481'),('West Jamar', 'MD', '86437-7374'),('Auerchester', 'OR', '86844'),
-('Tyriquebury', 'NJ', '87303-5999'),('Lake Joyton', 'AK', '87363'),('Port Isabella', 'LA', '88188'),('Dickinsonland', 'KS', '92278'),
+('South Bethelland', 'TX', '21207-3035'),('Lake Mohammad', 'UT', '24063'),('Port Zenaland', 'NY', '31072'),
+('East Isomville', 'MA', '35169-2176'),('Lindgrenburgh', 'NM', '35603-3646'),('North Elyse', 'MO', '35652'),
+('Goodwinview', 'AK', '36001-2043'),('Gleasonborough', 'NJ', '36383'),('Shanahanland', 'LA', '36446'),
+('Port Bert', 'OK', '38807-7914'),('East Arnoldstad', 'WA', '39333'),('North Orville', 'CO', '39893'),
+('Nashberg', 'OH', '41155'),('New Roslyn', 'CO', '42081-1347'),('Stammside', 'AZ', '45736-8738'),
+('Loweborough', 'WA', '47838-0665'),('Klockobury', 'MA', '48118-2671'),('Litzyberg', 'AK', '49281'),
+('East Felicia', 'MN', '50016-5147'),('New Green', 'MI', '50197-5647'),('Port Isobel', 'OK', '55143'),
+('Ritchieport', 'DE', '58987'),('Hallieside', 'MT', '60793-3280'),('South Tremaineport', 'VA', '62432-4663'),
+('Port Sunny', 'DC', '63389'),('Jerdefurt', 'SD', '73411-9404'),('Presleytown', 'ID', '76991-9195'),
+('North Kylee', 'ME', '77447-6336'),('South Tito', 'IL', '81064-1868'),('North Emmanuellefurt', 'NE', '83481'),
+('West Jamar', 'MD', '86437-7374'),('Auerchester', 'OR', '86844'),('Tyriquebury', 'NJ', '87303-5999'),
+('Lake Joyton', 'AK', '87363'),('Port Isabella', 'LA', '88188'),('Dickinsonland', 'KS', '92278'),
 ('South Cliffordshire', 'NC', '93001-7134'),('Abdielfurt', 'ME', '95141-7736');
+
 
 INSERT INTO `yulanies_salon`.`customer` VALUES 
 ('1', 'Forest', 'Schneider', '6849774952', '6753 Stephanie Lights Suite 341', 'Bruenmouth', 'DC', '10247-0849', 'M'),

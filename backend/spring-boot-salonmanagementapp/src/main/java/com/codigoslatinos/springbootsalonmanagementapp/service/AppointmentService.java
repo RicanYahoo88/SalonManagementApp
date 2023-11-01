@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AppointmentService {
@@ -30,10 +29,10 @@ public class AppointmentService {
         return appointmentRepo.save(appointment);
     }
 
-    public Appointment findAppointmentByAppointmentId(Long appointmentID){
+    public Appointment findAppointmentByAppointmentId(String appointmentID){
         return appointmentRepo.getReferenceById(appointmentID);
     }
-    public void deleteAppointment(Long appointmentID) {
+    public void deleteAppointment(String appointmentID) {
         appointmentRepo.deleteAppointmentByAppointmentID(appointmentID);
     }
 }

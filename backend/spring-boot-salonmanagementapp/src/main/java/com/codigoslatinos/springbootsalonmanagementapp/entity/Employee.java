@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.Getter;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 @Getter
 @Entity
@@ -16,7 +17,7 @@ public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "employee_ID")
-    private Long employeeID;
+    private String employeeID;
 
     @Column(name = "first_name")
     private String firstName;
@@ -28,7 +29,7 @@ public class Employee implements Serializable {
     private String street;
 
     @Column(name = "zip_code")
-    private int zipCode;
+    private String zipCode;
 
     @Column(name = "city")
     private String city;
@@ -39,7 +40,7 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(Long employeeID, String firstName, String lastName, String street, int zipCode, String city, double payRate) {
+    public Employee(String employeeID, String firstName, String lastName, String street, String zipCode, String city, double payRate) {
         this.employeeID = employeeID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -49,7 +50,7 @@ public class Employee implements Serializable {
         this.payRate = payRate;
     }
 
-    public void setEmployeeID(Long employeeID) {
+    public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
     }
 
@@ -65,7 +66,7 @@ public class Employee implements Serializable {
         this.street = street;
     }
 
-    public void setZipCode(int zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 

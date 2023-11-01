@@ -25,7 +25,7 @@ public class ZipCodeController {
     }
 
     @GetMapping("/find/{zipcode}")
-    public ResponseEntity<ZipCode> getZipCodeByZipcode(@PathVariable("zipcode") Long zipcode) {
+    public ResponseEntity<ZipCode> getZipCodeByZipcode(@PathVariable("zipcode") String zipcode) {
         ZipCode zipCode = zipCodeService.findZipCode(zipcode);
         return new ResponseEntity<>(zipCode, HttpStatus.OK);
 
@@ -43,7 +43,7 @@ public class ZipCodeController {
     }
 
     @DeleteMapping("/delete/{zipcode}")
-    public ResponseEntity<?> deleteZipcode(@PathVariable("zipcode") Long zipCode) {
+    public ResponseEntity<?> deleteZipcode(@PathVariable("zipcode") String zipCode) {
         zipCodeService.deleteZipCode(zipCode);
         return new ResponseEntity<>(HttpStatus.OK);
     }

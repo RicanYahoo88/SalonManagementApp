@@ -18,7 +18,7 @@ public class SalonServicesService {
         this.salonServicesRepo = salonServicesRepo;
     }
     public SalonServices addSalonService(SalonServices salonService) {
-        salonService.setAppointmentID(Long.valueOf(UUID.randomUUID().toString()));
+        salonService.setServiceID(UUID.randomUUID().toString());
         return salonServicesRepo.save(salonService);
 
     }
@@ -31,12 +31,12 @@ public class SalonServicesService {
         return salonServicesRepo.save(salonService);
     }
 
-    public SalonServices findSalonServiceByLineItemNumber(int lineItemNumber){
-        return salonServicesRepo.getReferenceByLineItemNumber(lineItemNumber);
+    public SalonServices findSalonServiceByServiceID(String serviceID){
+        return salonServicesRepo.getReferenceById(serviceID);
     }
 
-    public void deleteSalonServiceByLineItemNumber(int lineItemNumber){
-        salonServicesRepo.deleteSalonServiceByLineItemNumber(lineItemNumber);
+    public void deleteSalonServiceByServiceID(String serviceID){
+        salonServicesRepo.deleteSalonServiceByServiceID(serviceID);
     }
 
 }

@@ -1,11 +1,10 @@
 package com.codigoslatinos.springbootsalonmanagementapp.service;
 
 import com.codigoslatinos.springbootsalonmanagementapp.dao.ServicesRenderedRepository;
-import com.codigoslatinos.springbootsalonmanagementapp.entity.ServicesRendered;
+import com.codigoslatinos.springbootsalonmanagementapp.entity.ServiceRendered;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -18,25 +17,25 @@ public class ServicesRenderedService {
         this.servicesRenderedRepo = servicesRenderedRepo;
     }
 
-    public ServicesRendered addServiceRendered(ServicesRendered serviceRendered) {
-        serviceRendered.setServiceID(Long.valueOf(UUID.randomUUID().toString()));
+    public ServiceRendered addServiceRendered(ServiceRendered serviceRendered) {
+        serviceRendered.setServiceID(UUID.randomUUID().toString());
         return servicesRenderedRepo.save(serviceRendered);
 
     }
 
-    public List<ServicesRendered> findAllServicesRendered(){
+    public List<ServiceRendered> findAllServicesRendered(){
         return servicesRenderedRepo.findAll();
     }
 
-    public ServicesRendered updateServiceRendered(ServicesRendered serviceRendered){
+    public ServiceRendered updateServiceRendered(ServiceRendered serviceRendered){
         return servicesRenderedRepo.save(serviceRendered);
     }
 
-    public ServicesRendered findServiceRenderedByServiceID(Long serviceID){
-        return servicesRenderedRepo.getReferenceByServiceID(serviceID);
+    public ServiceRendered findServiceRenderedByServiceID(String serviceID){
+        return servicesRenderedRepo.getReferenceById(serviceID);
     }
 
-    public void deleteServiceRendered(Long serviceID){
+    public void deleteServiceRendered(String serviceID){
         servicesRenderedRepo.deleteServiceRenderedByServiceID(serviceID);
     }
 }

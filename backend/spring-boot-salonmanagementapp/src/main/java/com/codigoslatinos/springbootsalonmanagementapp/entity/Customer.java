@@ -16,7 +16,7 @@ public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_ID")
-    private Long customerID;
+    private String customerID;
 
     @Column(name = "first_name")
     private String firstName;
@@ -34,7 +34,7 @@ public class Customer implements Serializable {
     private String state;
 
     @Column(name = "zip_code")
-    private int zipCode;
+    private String zipCode;
 
     @Column(name = "gender")
     private String gender;
@@ -42,7 +42,7 @@ public class Customer implements Serializable {
     public Customer() {
     }
 
-    public Customer(Long customerID, String firstName, String lastName, String street, String city, String state, int zipCode, String gender) {
+    public Customer(String customerID, String firstName, String lastName, String street, String city, String state, String zipCode, String gender) {
         this.customerID = customerID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -53,7 +53,7 @@ public class Customer implements Serializable {
         this.gender = gender;
     }
 
-    public void setCustomerID(Long customerID) {
+    public void setCustomerID(String customerID) {
         this.customerID = customerID;
     }
 
@@ -77,7 +77,7 @@ public class Customer implements Serializable {
         this.state = state;
     }
 
-    public void setZipCode(int zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 

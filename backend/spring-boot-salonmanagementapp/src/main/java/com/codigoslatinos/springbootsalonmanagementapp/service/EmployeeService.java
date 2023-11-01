@@ -18,7 +18,7 @@ public class EmployeeService {
     }
 
     public Employee addEmployee(Employee employee) {
-        employee.setEmployeeID(Long.valueOf(UUID.randomUUID().toString()));
+        employee.setEmployeeID(UUID.randomUUID().toString());
         return employeeRepo.save(employee);
     }
 
@@ -31,11 +31,11 @@ public class EmployeeService {
     }
 
 
-    public void deleteEmployee(Long employeeID) {
+    public void deleteEmployee(String employeeID) {
         employeeRepo.deleteEmployeeByEmployeeID(employeeID);
     }
 
-    public Employee findByEmployeeID(Long employeeID) {
+    public Employee findByEmployeeID(String employeeID) {
         return employeeRepo.getReferenceById(employeeID);
     }
 }

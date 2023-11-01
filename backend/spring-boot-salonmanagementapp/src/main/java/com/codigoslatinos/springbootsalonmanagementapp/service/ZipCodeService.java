@@ -29,11 +29,11 @@ public class ZipCodeService {
         return zipCodeRepo.save(zipcode);
     }
 
-    public ZipCode findZipCode(Long zipcode){
+    public ZipCode findZipCode(String zipcode){
         return zipCodeRepo.getReferenceById(zipcode);
     }
 
-    public void deleteZipCode(Long zipcode){
+    public void deleteZipCode(String zipcode){
         zipCodeRepo.deleteByZipcode(zipcode);
     }
 }

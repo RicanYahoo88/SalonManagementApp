@@ -19,7 +19,7 @@ public class CustomerService {
     }
 
     public Customer addCustomer(Customer customer){
-        customer.setCustomerID(Long.valueOf(UUID.randomUUID().toString()));
+        customer.setCustomerID(UUID.randomUUID().toString());
         return customerRepo.save(customer);
     }
     public List<Customer> findAllCustomers() {
@@ -30,11 +30,11 @@ public class CustomerService {
         return customerRepo.save(customer);
     }
 
-    public Customer findCustomerByCustomerId(Long customerID) {
+    public Customer findCustomerByCustomerId(String customerID) {
        return customerRepo.getReferenceById(customerID);
     }
 
-    public void deleteCustomer(Long customerID) {
+    public void deleteCustomer(String customerID) {
         customerRepo.deleteCustomerByCustomerID(customerID);
     }
 

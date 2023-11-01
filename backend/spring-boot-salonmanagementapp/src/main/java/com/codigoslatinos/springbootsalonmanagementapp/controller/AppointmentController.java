@@ -26,7 +26,7 @@ public class AppointmentController {
     }
 
     @GetMapping("/find/{appointment_ID}")
-    public ResponseEntity<Appointment> getAppointmentByAppointment_ID(@PathVariable("appointment_ID") Long appointmentID) {
+    public ResponseEntity<Appointment> getAppointmentByAppointment_ID(@PathVariable("appointment_ID") String appointmentID) {
         Appointment appointment = appointmentService.findAppointmentByAppointmentId(appointmentID);
         return new ResponseEntity<>(appointment, HttpStatus.OK);
     }
@@ -43,7 +43,7 @@ public class AppointmentController {
         return new ResponseEntity<>(updatedAppointment, HttpStatus.OK);
     }
     @DeleteMapping("/delete/{appointmentID}")
-    public ResponseEntity<?> deleteAppointment(@PathVariable("appointmentID") Long appointmentID) {
+    public ResponseEntity<?> deleteAppointment(@PathVariable("appointmentID") String appointmentID) {
     appointmentService.deleteAppointment(appointmentID);
     return new ResponseEntity<>(HttpStatus.OK);
     }
