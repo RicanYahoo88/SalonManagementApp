@@ -1,0 +1,10 @@
+{
+ `employee_ID
+  `first_name` 
+  `last_name` 
+  `street` 
+  `zip_code` 
+  `city` 
+  `state` 
+  `pay_rate` 
+}
