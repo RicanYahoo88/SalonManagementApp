@@ -18,12 +18,12 @@ USE `yulanies_salon`;
 DROP TABLE IF EXISTS `yulanies_salon`.`zipcode`;
 
 CREATE TABLE `yulanies_salon`.`zipcode` (
-    `city` VARCHAR(36) DEFAULT NULL,
-    `state` VARCHAR(4) DEFAULT NULL,
-    `zip_code` bigint(12) NOT NULL,
+    `city` varchar(36) DEFAULT NULL,
+    `state` varchar(4) DEFAULT NULL,
+    `zip_code` int NOT NULL,
     PRIMARY KEY (`zip_code`)
 )  ENGINE=INNODB DEFAULT CHARSET=UTF8MB4 COLLATE = UTF8MB4_GENERAL_CI;
-          
+          zipcode
 -- -----------------------------------------------------
 -- Table `yulanies_salon`.`customer`
 -- -----------------------------------------------------
@@ -31,14 +31,14 @@ CREATE TABLE `yulanies_salon`.`zipcode` (
 DROP TABLE IF EXISTS `yulanies_salon`.`customer`;
 
 CREATE TABLE `yulanies_salon`.`customer` (
-  `customer_ID` bigint NOT NULL,
+  `customer_ID` int NOT NULL,
   `first_name` varchar(35) DEFAULT NULL,
   `last_name` varchar(35) DEFAULT NULL,
-  `phone_number` int(15) DEFAULT NULL,
+  `phone_number` int DEFAULT NULL,
   `street` varchar(35) DEFAULT NULL,
   `city` varchar(36) DEFAULT NULL,
   `state` varchar(4) DEFAULT NULL,
-  `zip_code` bigint(12) DEFAULT NULL,
+  `zip_code` int DEFAULT NULL,
   `gender` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`customer_ID`),
   FOREIGN KEY (`zip_code`) REFERENCES zipcode(`zip_code`)
@@ -50,9 +50,9 @@ CREATE TABLE `yulanies_salon`.`customer` (
 DROP TABLE IF EXISTS `yulanies_salon`.`appointment`;
 
 CREATE TABLE `yulanies_salon`.`appointment` (
-  `appointment_ID` bigint(10) NOT NULL,
+  `appointment_ID` int NOT NULL,
   `appointment_date_time` date DEFAULT NULL,
-  `customer_ID` bigint(10) NOT NULL,
+  `customer_ID` int NOT NULL,
   PRIMARY KEY (`appointment_ID`),
   FOREIGN KEY (`customer_ID`) REFERENCES customer(`customer_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -63,7 +63,7 @@ CREATE TABLE `yulanies_salon`.`appointment` (
 DROP TABLE IF EXISTS `salon_services`;
 
 CREATE TABLE `yulanies_salon`.`salon_services` (
-  `service_ID` bigint(10) NOT NULL,
+  `service_ID` int NOT NULL,
   `service_name` varchar(35) DEFAULT NULL,
   `service_duration` date DEFAULT NULL,
   `service_price` decimal(4,0) DEFAULT NULL,
@@ -77,11 +77,11 @@ CREATE TABLE `yulanies_salon`.`salon_services` (
 DROP TABLE IF EXISTS `employee`;
 
 CREATE TABLE `yulanies_salon`.`employee` (
-  `employee_ID` bigint(10) NOT NULL,
+  `employee_ID` int NOT NULL,
   `first_name` varchar(35) DEFAULT NULL,
   `last_name` varchar(25) DEFAULT NULL,
   `street` varchar(45) DEFAULT NULL,
-  `zip_code` bigint(12) DEFAULT NULL,
+  `zip_code` int DEFAULT NULL,
   `city` varchar(25) DEFAULT NULL,
   `state` varchar(45) DEFAULT NULL,
   `pay_rate` decimal(4,0) DEFAULT NULL,
@@ -93,11 +93,11 @@ CREATE TABLE `yulanies_salon`.`employee` (
 -- -----------------------------------------------------
 
 CREATE TABLE `service_rendered` (
-  `appointment_ID` bigint NOT NULL,
+  `appointment_ID` int NOT NULL,
   `line_item_number` int NOT NULL,
-  `service_ID` bigint NOT NULL,
-  `service_price` double DEFAULT NULL,
-  `employee_ID` bigint NOT NULL,
+  `service_ID` int NOT NULL,
+  `service_price` decimal(4,0) DEFAULT NULL,
+  `employee_ID` int NOT NULL,
   `service_description` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `service_duration` datetime(6) DEFAULT NULL,
   `service_materials` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,

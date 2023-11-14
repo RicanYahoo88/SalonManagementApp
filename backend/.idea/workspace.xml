@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a793d3a7-4f96-4f43-a3a1-3e365075c6c9" name="Changes" comment="" />
+    <list default="true" id="430ce2d8-c6b3-4623-9cfd-fca1b0cf6235" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/backend.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-salonmanagementapp.zip" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,9 +19,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
   "associatedIndex": 3
 }]]></component>
-  <component name="ProjectId" id="2VM4ghRKmMTs4SIpFIN7JXVbE6Z" />
+  <component name="ProjectId" id="2Xx2KrFAixbvFy1Fix86uFUevgd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -23,17 +32,17 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/edgar/repos/SalonManagementApp/backend"
+    "last_opened_file_path": "C:/Users/Cloud/Documents/Repos/SalonManagementApp/backend/spring-boot-salonmanagementapp"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a793d3a7-4f96-4f43-a3a1-3e365075c6c9" name="Changes" comment="" />
-      <created>1694632729223</created>
+      <changelist id="430ce2d8-c6b3-4623-9cfd-fca1b0cf6235" name="Changes" comment="" />
+      <created>1699556351732</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1694632729223</updated>
+      <updated>1699556351732</updated>
     </task>
     <servers />
   </component>
